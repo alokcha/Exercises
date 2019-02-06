@@ -44,17 +44,22 @@ namespace GUID.Controllers
             }
             guidObj = guidObj ?? new GUIDData(guid);
             guidObj.guid = guid;
-            // If no expire times is passed in input, set it to 30 days from now
-            if (guidObj.expire == 0)
-            {
-                guidObj.expire = new DateTimeOffset(DateTime.Now.AddDays(30)).ToUnixTimeSeconds();
-            }
+
             // look for existing data with the guid passed as input
             GUIDData existingGuidObj = (GUIDData)CacheHelper.Get(guid, typeof(GUIDData));
-
-            // no existing guid is treated as a Create reuest
             if (existingGuidObj == null)
             {
+                existingGuidObj = guidDataContext.GUIDs.Find(guid);
+            }
+
+            // if there id no existing guid, this is treated as a Create request
+            if (existingGuidObj == null)
+            {
+                // If no expire times is passed in input, set it to 30 days from now
+                if (guidObj.expire == 0)
+                {
+                    guidObj.expire = new DateTimeOffset(DateTime.Now.AddDays(30)).ToUnixTimeSeconds();
+                }
                 // if the input expire time is already in the past, no data is created and a null will be returned
                 if (guidObj.expire > new DateTimeOffset(DateTime.Now).ToUnixTimeSeconds())
                 {
@@ -62,11 +67,14 @@ namespace GUID.Controllers
                     existingGuidObj = guidObj;
                 }
             }
-            // already existing guid is treated as an Update reuest
+            // if the guid already exists, this is treated as an Update reuest
             else
             {
-                // assign the new expire time from input to the existing metadata object
-                existingGuidObj.expire = guidObj.expire;
+                // assign the new expire time (if present) from input to the existing metadata object
+                if (guidObj.expire != 0)
+                {
+                    existingGuidObj.expire = guidObj.expire;
+                }
                 // if the expire time set in the updated guid object is already in the past, the object is deleted and a null will be returned
                 if (existingGuidObj.expire <= new DateTimeOffset(DateTime.Now).ToUnixTimeSeconds())
                 {
@@ -141,7 +149,7 @@ namespace GUID.Controllers
             // remove from cache while the data is being deleted from the db
             CacheHelper.Remove(guid);
             //await deleteTask;
-            
+
             return NoContent();
         }
     }
