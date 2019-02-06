@@ -29,7 +29,7 @@ namespace GUID.Controllers
         [HttpPost]
         public async Task<ActionResult<GUIDData>> PostGUIDData(string guid, [FromBody]GUIDData guidObj)
         {
-            // create a new guid if a it is not passed as input
+            // create a new guid if its not already passed as input
             guid = guid ?? (guidObj != null && !string.IsNullOrWhiteSpace(guidObj.guid) ? guidObj.guid : Guid.NewGuid().ToString());
             Guid hxGuid;
             // error response for an invalid guid
