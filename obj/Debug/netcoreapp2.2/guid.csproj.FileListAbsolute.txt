@@ -1,0 +1,14 @@
+C:\guid\bin\Debug\netcoreapp2.2\guid.deps.json
+C:\guid\bin\Debug\netcoreapp2.2\guid.runtimeconfig.json
+C:\guid\bin\Debug\netcoreapp2.2\guid.runtimeconfig.dev.json
+C:\guid\bin\Debug\netcoreapp2.2\guid.dll
+C:\guid\bin\Debug\netcoreapp2.2\guid.pdb
+C:\guid\obj\Debug\netcoreapp2.2\guid.csprojAssemblyReference.cache
+C:\guid\obj\Debug\netcoreapp2.2\guid.csproj.CoreCompileInputs.cache
+C:\guid\obj\Debug\netcoreapp2.2\guid.RazorAssemblyInfo.cache
+C:\guid\obj\Debug\netcoreapp2.2\guid.RazorAssemblyInfo.cs
+C:\guid\obj\Debug\netcoreapp2.2\guid.AssemblyInfoInputs.cache
+C:\guid\obj\Debug\netcoreapp2.2\guid.AssemblyInfo.cs
+C:\guid\obj\Debug\netcoreapp2.2\guid.RazorTargetAssemblyInfo.cache
+C:\guid\obj\Debug\netcoreapp2.2\guid.dll
+C:\guid\obj\Debug\netcoreapp2.2\guid.pdb
