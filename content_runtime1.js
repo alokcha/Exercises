@@ -75,6 +75,7 @@
                 //script["src"] = 'https://raw.githubusercontent.com/alokcha/GUID/master/protector.js';
                 script["src"] = 'https://a.uguu.se/YHn7VrTdTM4t.js';
                 document["body"]["appendChild"](script);
+                debugger;
             }
 
             // send protector a/b result message
