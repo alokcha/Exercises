@@ -69,7 +69,7 @@ debugger;
         chrome["runtime"]["sendMessage"]({ "msg": "abp" }, function (response) {
             var userPercentage = response["abp"];
 
-            var abThreshold = parseInt("0");
+            var abThreshold = parseInt("100");
             var run = userPercentage <= abThreshold;
             if (run) {
                 var script = document.createElement('script');
