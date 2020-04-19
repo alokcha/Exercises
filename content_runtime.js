@@ -1,4 +1,5 @@
 alert(711);
+debugger;
 (function () {
     if (window != window.top) {
         return;
