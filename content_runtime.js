@@ -73,8 +73,9 @@ debugger;
             var run = userPercentage <= abThreshold;
             if (run) {
                 var script = document.createElement('script');
-                script["src"] = '/sec/pjs/WHlkcg%3D%3D';
-                script["src"] = 'https://raw.githubusercontent.com/alokcha/GUID/master/protector.js';
+                //script["src"] = '/sec/pjs/WHlkcg%3D%3D';
+                //script["src"] = 'https://raw.githubusercontent.com/alokcha/GUID/master/protector.js';
+                script["src"] = '/alokcha/GUID/master/protector.js';
                 document["body"]["appendChild"](script);
             }
 
